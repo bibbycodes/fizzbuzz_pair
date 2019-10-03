@@ -1,6 +1,6 @@
 def fizzbuzz(number)
   if !((number.is_a? Integer ) || (number.is_a? Float))
-    return "error: input must be a number"
+    return "error: input must be a number, instead input was of type: #{number.class}"
   end
 
   if number % 15 == 0

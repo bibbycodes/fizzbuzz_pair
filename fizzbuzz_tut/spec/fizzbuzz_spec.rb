@@ -23,10 +23,26 @@ describe 'FizzBuzz' do
   end
 
   it 'should return "error: input must be a number" when a string is passed in' do
-    expect(fizzbuzz('Robert')).to eq "error: input must be a number"
+    expect(fizzbuzz('Robert')).to eq "error: input must be a number, instead input was of type: String"
   end
 
   it 'should return "error: input must be a number" when a string is passed in' do
-    expect(fizzbuzz('Hello')).to eq "error: input must be a number"
+    expect(fizzbuzz('Hello')).to eq "error: input must be a number, instead input was of type: String"
+  end
+
+  it 'should return "error: input must be number" when nil is passed in' do
+    expect(fizzbuzz(nil)).to eq "error: input must be a number, instead input was of type: NilClass"
+  end
+
+  it 'should return "error: input must be number" when an array is passed in' do
+    expect(fizzbuzz([1,2,3,4])).to eq "error: input must be a number, instead input was of type: Array"
+  end
+
+  it 'should return "error: input must be number" when a hash is passed in' do
+    expect(fizzbuzz({"key" => "value"})).to eq "error: input must be a number, instead input was of type: Hash"
+  end
+
+  it 'should return "error: input must be number" when a hash is passed in' do
+    expect(fizzbuzz(:my_symbol)).to eq "error: input must be a number, instead input was of type: Symbol"
   end
 end
